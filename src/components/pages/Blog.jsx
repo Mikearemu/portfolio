@@ -12,7 +12,8 @@ const Blog = () => {
     const [errorMessage, setErrorMessage] = useState(null);
 
     useEffect(() => {
-        fetch(`https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=${import.meta.env.REACT_BLOG_API_KEY}`)
+      
+        fetch(`https://api.thenewsapi.com/v1/news/all?api_token=Sb7Rxn0aY8Uf0eNRyn627AxeSuqdDbhoU7aNTfcB&language=en&limit=3`)
             .then((response) => {
                 if (!response.ok) {
                     throw new Error('Failed to fetch articles');
@@ -70,13 +71,13 @@ const Blog = () => {
                                 className="cursor-pointer"
                             >
                                 <img
-                                    src={article.urlToImage ? article.urlToImage : news} 
+                                    src={article.image_url ? article.image_url : news} 
                                     alt={article.title}
                                     className="w-full h-48 object-cover "
                                 />
                                 <div className="mt-3 space-y-2">
                                     <span className="block text-orange-600 text-sm">
-                                        {new Date(article.publishedAt).toLocaleDateString()}
+                                        {new Date(article.published_at).toLocaleDateString()}
                                     </span>
                                     <h3 className="text-lg text-gray-800 duration-150 group-hover:text-orange-600 font-semibold">
                                         {article.title}
