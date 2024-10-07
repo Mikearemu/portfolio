@@ -17,7 +17,7 @@ const projects = [
     technologies: ['React', 'Tailwind CSS', 'Node.js'],
     team: 'Mike',
     githubRepo: 'https://github.com/Mikearemu/blogouse',
-    projectUrl: 'https://github.com/Mikearemu/blogouse',
+    projectUrl: 'https://blogouse.vercel.app/',
   },
   {
     title: 'BILLYONMINDSET',
