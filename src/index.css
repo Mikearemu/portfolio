@@ -1,0 +1,134 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* .bg-orange-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(154, 33, 33) !important;
+}
+
+.text-orange-600 {
+ color: rgb(64, 64, 241) !important;
+} */
+
+:root {
+  font-family: 'outfit', sans-serif;
+ 
+  color-scheme: dark ;
+  --color: rgba(143, 134, 134, 0.106);
+  
+}
+
+p{
+  font-family: "Montserrat", sans-serif;
+}
+.bg-effect {
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f4;
+  background-image: linear-gradient(0deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent),
+      linear-gradient(90deg, transparent 24%, var(--color) 25%, var(--color) 26%, transparent 27%,transparent 74%, var(--color) 75%, var(--color) 76%, transparent 77%,transparent);
+  background-size: 55px 55px;
+  background-position: -5px -5px;
+  background-attachment: fixed;
+  animation: move 4s linear infinite;
+}
+
+
+@keyframes move {
+  
+  100% {
+   
+    background-position: 50px 50px;
+  }
+}
+
+/* From Uiverse.io by Srivatsajbhat */ 
+:root {
+  --hue: 223px;
+  --bg: hsl(var(--hue),90%,95%);
+  --fg: hsl(var(--hue),90%,5%);
+  --trans-dur: 0.3s;
+  
+}
+
+
+
+main {
+  padding: 24px 0; height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ip {
+  width: 100px;
+  height: 50px;
+}
+
+.ip__track {
+  stroke: hsl(var(--hue),90%,90%);
+  transition: stroke var(--trans-dur);
+}
+
+.ip__worm1,
+.ip__worm2 {
+  animation: worm1 2s linear infinite;
+}
+
+.ip__worm2 {
+  animation-name: worm2;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue),90%,5%);
+    --fg: hsl(var(--hue),90%,95%);
+  }
+
+  .ip__track {
+    stroke: hsl(var(--hue),90%,15%);
+  }
+}
+
+/* Animation */
+@keyframes worm1 {
+  from {
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    animation-timing-function: steps(1);
+    stroke-dashoffset: -358;
+  }
+
+  50.01% {
+    animation-timing-function: linear;
+    stroke-dashoffset: 358;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes worm2 {
+  from {
+    stroke-dashoffset: 358;
+  }
+
+  50% {
+    stroke-dashoffset: 0;
+  }
+
+  to {
+    stroke-dashoffset: -358;
+  }
+}
